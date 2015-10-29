@@ -58,3 +58,13 @@ body {
         border-top-right-radius: 0;
     }
 
+.navbar img {
+    margin-top: -7px;
+}
+
+.ng-invalid.ng-dirty {
+  color: red;
+ }
+.ng-valid.ng-dirty {
+  color: green
+ }
