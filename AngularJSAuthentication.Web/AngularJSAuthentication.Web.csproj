@@ -90,6 +90,8 @@
     <Content Include="content\fonts\fontawesome-webfont.ttf" />
     <Content Include="content\fonts\fontawesome-webfont.woff" />
     <Content Include="content\fonts\FontAwesome.otf" />
+    <None Include="Properties\PublishProfiles\lekiosktest - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\lekiosktest - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\ngauthenticationweb.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

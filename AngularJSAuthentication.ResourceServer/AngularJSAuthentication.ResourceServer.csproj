@@ -101,6 +101,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="Properties\PublishProfiles\leskiosktestapiresouces - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\leskiosktestapiresouces - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\ngauthenticationResourcesAPI.pubxml" />
     <Content Include="Web.config" />
     <None Include="Web.Debug.config">
