@@ -1,5 +1,5 @@
 ﻿'use strict';
-app.factory('authService', ['$http', '$q', 'localStorageService', 'ngAuthSettings', function ($http, $q, localStorageService, ngAuthSettings) {
+app.factory('authService', ['$http', '$q', 'localStorageService', 'ngAuthSettings', 'noCAPTCHA', function ($http, $q, localStorageService, ngAuthSettings, noCAPTCHA) {
 
     var serviceBase = ngAuthSettings.apiServiceBaseUri;
     var authServiceFactory = {};
@@ -28,6 +28,8 @@ app.factory('authService', ['$http', '$q', 'localStorageService', 'ngAuthSetting
 
     var _login = function (loginData) {
 
+        
+
         var data = "grant_type=password&username=" + loginData.userName + "&password=" + loginData.password;
 
         if (loginData.useRefreshTokens) {
@@ -35,6 +37,9 @@ app.factory('authService', ['$http', '$q', 'localStorageService', 'ngAuthSetting
         }
 
         var deferred = $q.defer();
+
+        if (!noCAPTCHA.gRecaptchaResponse)
+            deferred.reject({ error: "invalid_grant", error_description: "Check Captcha" });
 
         $http.post(serviceBase + 'token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
 

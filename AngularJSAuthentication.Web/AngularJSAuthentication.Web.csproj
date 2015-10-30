@@ -111,6 +111,7 @@
     <Content Include="content\img\logo.png" />
     <Content Include="index.html" />
     <Content Include="scripts\angular-local-storage.min.js" />
+    <Content Include="scripts\angular-no-captcha.js" />
     <Content Include="scripts\authComplete.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\loading-bar.min.js" />

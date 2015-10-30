@@ -18,6 +18,7 @@ module.exports = function(config) {
       'node_modules/angular/angular.js',
       'scripts/angular-local-storage.min.js',
       'scripts/loading-bar.min.js',
+      'scripts/angular-no-captcha.js',
       'node_modules/angular-route/angular-route.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'app/app.js',
