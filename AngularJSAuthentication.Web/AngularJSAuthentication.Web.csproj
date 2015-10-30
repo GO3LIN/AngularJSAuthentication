@@ -77,6 +77,7 @@
     <Content Include="app\views\signup.html" />
     <Content Include="app\views\tokens.html" />
     <Content Include="authComplete.html" />
+    <Content Include="content\css\custom.min.css" />
     <Content Include="content\css\font-awesome.min.css" />
     <Content Include="content\css\loading-bar.css" />
     <Content Include="content\css\loading-bar.min.css" />
@@ -111,6 +112,7 @@
     <Content Include="index.html" />
     <Content Include="scripts\angular-local-storage.min.js" />
     <Content Include="scripts\authComplete.js" />
+    <Content Include="scripts\bootstrap.min.js" />
     <Content Include="scripts\loading-bar.min.js" />
     <Content Include="test\authSpec.js" />
     <Content Include="test\signupCtrlSpec.js" />

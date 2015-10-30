@@ -1,16 +1,16 @@
-﻿<form role="form">
+﻿<form class="form-login" role="form">
     <div class="row">
 
         <div class="col-md-6 col-md-offset-3">
             <h2 class="form-login-heading"><i class="fa fa-sign-in"></i> Connexion</h2>
-            <input type="text" class="form-control" placeholder="Nom d'utilisateur'" data-ng-model="loginData.userName" required autofocus>
+            <input type="text" class="form-control" placeholder="Nom d'utilisateur" data-ng-model="loginData.userName" required autofocus>
             <input type="password" class="form-control" placeholder="Mot de pass" data-ng-model="loginData.password" required>
             <div class="checkbox">
                 <label>
                     <input type="checkbox" data-ng-model="loginData.useRefreshTokens" checked><strong> Maintenir la connexion</strong>
                 </label>
             </div>
-            <button class="btn btn-md btn-primary btn-block" type="submit" data-ng-click="login()">Se connecter</button>
+            <button class="btn btn-lg btn-primary btn-block" type="submit" data-ng-click="login()">Se connecter</button>
               <div data-ng-hide="message == ''" class="alert alert-danger">
                 {{message}}
             </div>
