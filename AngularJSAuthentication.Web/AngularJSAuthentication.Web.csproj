@@ -80,6 +80,8 @@
     <Content Include="content\css\font-awesome.min.css" />
     <Content Include="content\css\loading-bar.css" />
     <Content Include="content\css\loading-bar.min.css" />
+    <Content Include="content\css\material-fullpalette.min.css" />
+    <Content Include="content\css\ripples.min.css" />
     <Content Include="content\css\site.css" />
     <Content Include="content\css\social-buttons.css" />
     <Content Include="content\fonts\fontawesome-webfont.svg" />
@@ -90,6 +92,7 @@
     <Content Include="content\fonts\fontawesome-webfont.ttf" />
     <Content Include="content\fonts\fontawesome-webfont.woff" />
     <Content Include="content\fonts\FontAwesome.otf" />
+    <Content Include="content\css\roboto.min.css" />
     <None Include="Properties\PublishProfiles\lekiosktest - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\lekiosktest - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\ngauthenticationweb.pubxml" />
@@ -104,10 +107,13 @@
     <Content Include="app\app.js" />
     <Content Include="content\css\bootstrap.min.css" />
     <Content Include="content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="content\img\logo.png" />
     <Content Include="index.html" />
     <Content Include="scripts\angular-local-storage.min.js" />
     <Content Include="scripts\authComplete.js" />
     <Content Include="scripts\loading-bar.min.js" />
+    <Content Include="test\authSpec.js" />
+    <Content Include="test\signupCtrlSpec.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

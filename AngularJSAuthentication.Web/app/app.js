@@ -4,8 +4,8 @@ var app = angular.module('AngularAuthApp', ['ngRoute', 'LocalStorageModule', 'an
 app.config(function ($routeProvider) {
 
     $routeProvider.when("/home", {
-        controller: "homeController",
-        templateUrl: "/app/views/home.html"
+        controller: "loginController",
+        templateUrl: "/app/views/login.html"
     });
 
     $routeProvider.when("/login", {

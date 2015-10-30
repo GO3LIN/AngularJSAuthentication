@@ -28,7 +28,6 @@ body {
 }
 
 .form-login {
-    max-width: 330px;
     padding: 0px 15px 5px 15px;
     margin: 0 auto;
 }
@@ -59,12 +58,12 @@ body {
     }
 
 .navbar img {
-    margin-top: -7px;
+    margin-top: -10px;
 }
 
 .ng-invalid.ng-dirty {
   color: red;
  }
-.ng-valid.ng-dirty {
-  color: green
- }
+#inscriptionSubmit {
+    margin-top: 10px;
+}
