@@ -55,6 +55,45 @@ namespace AngularJSAuthentication.API.Controllers
              return Ok();
         }
 
+        // POST api/Account/ForgotPassword
+        [AllowAnonymous]
+        [Route("ForgotPassword")]
+        public async Task<IHttpActionResult> ForgotPassword(UserForgotPwdModel userModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            string code = await _repo.SendRecoveryToken(userModel);
+
+
+            // If we got this far, something failed, redisplay form
+            return Ok();
+        }
+        // POST api/Account/ResetPassword
+        [AllowAnonymous]
+        [Route("ResetPassword")]
+        public async Task<IHttpActionResult> ResetPassword(NewPassModel userModel)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            IdentityResult result = await _repo.ResetNewPassword(userModel);
+
+            IHttpActionResult errorResult = GetErrorResult(result);
+
+            if (errorResult != null)
+            {
+                return errorResult;
+            }
+
+            // If we got this far, something failed, redisplay form
+            return Ok();
+        }
+
         // GET api/Account/ExternalLogin
         [OverrideAuthentication]
         [HostAuthentication(DefaultAuthenticationTypes.ExternalCookie)]

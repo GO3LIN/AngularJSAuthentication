@@ -13,11 +13,19 @@
                     <input type="checkbox" data-ng-model="loginData.useRefreshTokens" checked><strong> Maintenir la connexion</strong>
                 </label>
             </div>
-            <no-captcha g-recaptcha-response="gRecaptchaResponse"
-                        theme='light'
-                        control="noCaptchaControl"
-                        site-key="6Ldn-Q8TAAAAADAhsDoIvSHNTPEmLyj_7nLjIUUN">
-            </no-captcha>
+            <div class="row">
+                <div class="col-md-7">
+                    <no-captcha g-recaptcha-response="gRecaptchaResponse"
+                                theme='light'
+                                control="noCaptchaControl"
+                                site-key="6Ldn-Q8TAAAAADAhsDoIvSHNTPEmLyj_7nLjIUUN">
+                    </no-captcha>
+                </div>
+                <div class="col-md-5">
+                    <a class="btn btn-info" href="#/forgot">Mot de pass oublié?</a>
+                </div>
+            </div>
+            
             <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="!gRecaptchaResponse" data-ng-click="login()">Se connecter</button>
             
         </div>

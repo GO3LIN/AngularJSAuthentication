@@ -38,12 +38,29 @@ app.config(function ($routeProvider) {
         templateUrl: "/app/views/associate.html"
     });
 
+    $routeProvider.when("/forgot", {
+        controller: "forgotController",
+        templateUrl: "/app/views/forgot.html"
+    });
+
+    $routeProvider.when('/resetPassword/:userId/:codeId*', {
+        controller: "forgotController",
+        templateUrl: "/app/views/reset.html"
+    });
+
+    $routeProvider.when('/forgotSent', {
+        controller: "forgotController",
+        templateUrl: "/app/views/forgotSent.html"
+    });
+
+
+
     $routeProvider.otherwise({ redirectTo: "/home" });
 
 });
 
-//var serviceBase = 'http://localhost:26264/';
-var serviceBase = 'http://lekiosktestapi.azurewebsites.net/';
+var serviceBase = 'http://localhost:26264/';
+//var serviceBase = 'http://lekiosktestapi.azurewebsites.net/';
 app.constant('ngAuthSettings', {
     apiServiceBaseUri: serviceBase,
     clientId: 'ngAuthApp'

@@ -8,6 +8,7 @@ namespace AngularJSAuthentication.API.Models
 {
     public class UserModel
     {
+        public string Id { get; set; }
         [Required]
         [Display(Name = "User name")]
         public string UserName { get; set; }
@@ -22,6 +23,11 @@ namespace AngularJSAuthentication.API.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        [Display(Name = "Email")]
+        [DataType(DataType.EmailAddress)]
+        public string Email { get; set; }
     }
 
    

@@ -38,8 +38,6 @@ app.factory('authService', ['$http', '$q', 'localStorageService', 'ngAuthSetting
 
         var deferred = $q.defer();
 
-        if (!noCAPTCHA.gRecaptchaResponse)
-            deferred.reject({ error: "invalid_grant", error_description: "Check Captcha" });
 
         $http.post(serviceBase + 'token', data, { headers: { 'Content-Type': 'application/x-www-form-urlencoded' } }).success(function (response) {
 
@@ -160,6 +158,30 @@ app.factory('authService', ['$http', '$q', 'localStorageService', 'ngAuthSetting
 
     };
 
+    var _forgotPassword = function (userEmail) {
+        var deferred = $q.defer();
+
+        $http.post(serviceBase + 'api/account/forgotpassword', { email: userEmail }).success(function (response) {
+            deferred.resolve(response);
+        }).error(function (err, status) {
+            deferred.reject(err);
+        });
+
+        return deferred.promise;
+    }
+
+    var _resetPassword = function (newUserData) {
+        var deferred = $q.defer();
+
+        $http.post(serviceBase + 'api/account/resetpassword', newUserData).success(function (response) {
+            deferred.resolve(response);
+        }).error(function (err, status) {
+            deferred.reject(err);
+        });
+
+        return deferred.promise;
+    }
+
     authServiceFactory.saveRegistration = _saveRegistration;
     authServiceFactory.login = _login;
     authServiceFactory.logOut = _logOut;
@@ -170,6 +192,8 @@ app.factory('authService', ['$http', '$q', 'localStorageService', 'ngAuthSetting
     authServiceFactory.obtainAccessToken = _obtainAccessToken;
     authServiceFactory.externalAuthData = _externalAuthData;
     authServiceFactory.registerExternal = _registerExternal;
+    authServiceFactory.forgotPassword = _forgotPassword;
+    authServiceFactory.resetPassword = _resetPassword;
 
     return authServiceFactory;
 }]);

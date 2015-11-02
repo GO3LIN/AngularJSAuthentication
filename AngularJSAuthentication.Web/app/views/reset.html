@@ -1,0 +1,15 @@
+﻿<form role="form">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div data-ng-hide="errorMessage == ''" class="alert alert-danger">
+                {{errorMessage}}
+            </div>
+            <h2>Nouveau mot de pass</h2>
+
+            <input type="password" data-ng-model="newUserData.password" class="form-control" placeholder="Entrez votre nouveau mdp" autofocus required>
+            <br />
+            <button type="submit" class="btn btn-block btn-warning" data-ng-click="reset()">Envoyer</button>
+
+        </div>
+    </div>
+</form>

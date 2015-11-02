@@ -27,7 +27,7 @@
     })
 
     describe('#saveRegistration', function () {
-        it("Should have a registration method", function () {
+        it("Should have a saveRegistration method", function () {
             expect(authService.saveRegistration).to.be.a('function')
         })
         it("Should call register API", function () {
@@ -53,6 +53,7 @@
             authService.login({ userName: 'test', password: 'unit', useRefreshTokens: true }).then(function (r) {
                 response = r;
             })
+            //console.log(response);
             $http.flush();
             expect(response.access_token).to.be.equal('token');
             //console.log(localStorage.get('authorizationData'));
@@ -76,7 +77,7 @@
             expect(authService.authentication.userName).to.be.equal('test');
             expect(authService.authentication.useRefreshTokens).to.be.false;
         })
-        it('Should fail authentication', function () {
+        it('Should fail authentication', function () { 
             response = {};
             $http.expectPOST(serviceBase + 'token').respond(400, { error: "invalid_grant", error_description: "The user name or password is incorrect." });
             authService.login({}).then(undefined, function (r) {

@@ -1,0 +1,15 @@
+﻿<form role="form">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div data-ng-hide="errorMessage == ''" class="alert alert-danger">
+                {{errorMessage}}
+            </div>
+            <h2>Mot de pass oublié</h2>
+
+            <input type="email" data-ng-model="userData.email" class="form-control" placeholder="Entrez votre adresse Email" autofocus required>
+            <br />
+            <button type="submit" class="btn btn-block btn-warning" data-ng-click="forgot()">Envoyer</button>
+
+        </div>
+    </div>
+</form>
